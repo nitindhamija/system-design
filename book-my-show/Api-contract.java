@@ -1,5 +1,5 @@
-# API Contract
-- rest api' will be used between client and services
+/**  API Contract
+- rest api will be used between client and services
 
 API -> GetListOfCities()
 
@@ -21,14 +21,13 @@ API -> BookUserSelectedSeat(showTimeId, List<Integer> seatIds, dateTime, cinemaI
 
 API -> CallbackTimeoutForUserSelectedSeats(showTimeId, List<Integer> seatIds)
 
-
-## API implentation for Browsing theatres currently running the show (movie selected) in the town, including show timing by a chosen date
+*/
+// API implentation for Browsing theatres currently running the show (movie selected) in the town, including show timing by a chosen date
 
 // controller endpoint
 @GetMapping("/bms/v1/showtimes-by-movie-city")
 public ResponseEntity<List<showTimes>> GetAllShowTimesByMovieAndCity(@RequestParam(value = "movieId", required = true) final Integer movieId,
-                                        @RequestParam(value = "cityId") final Integer cityId,
-                                        final JwtAuthenticationToken auth) throws Throwable {
+                                        @RequestParam(value = "cityId") final Integer cityId, final JwtAuthenticationToken auth) throws Throwable {
                                             //auth i.e jwt token being verfied by common lib added as dependency in this service
                                             try{
                                                 List<showTimes> showTimesList = service.getShowTimesByMovieAndCity();
