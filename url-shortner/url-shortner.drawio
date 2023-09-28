@@ -1,0 +1,89 @@
+<mxfile host="65bd71144e">
+    <diagram id="E-xEQBUSB-vokPXqntr5" name="Page-1">
+        <mxGraphModel dx="974" dy="576" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="16" value="&lt;h1&gt;function requirement&amp;nbsp;&lt;/h1&gt;&lt;div&gt;- long url to short url&lt;br&gt;&lt;/div&gt;&lt;div&gt;- store for 10 years&lt;/div&gt;&lt;div&gt;- length of short url e.g (6-7-8 char)&lt;/div&gt;&lt;div&gt;- what char can be allowed in short url&lt;/div&gt;&lt;div&gt;- redirection to original url&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="30" y="80" width="300" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="&lt;h1&gt;non function requirement&amp;nbsp;&lt;/h1&gt;&lt;div&gt;- low latency i.e fast converison&amp;nbsp;&lt;/div&gt;&lt;div&gt;- high availability, scalability which mean eventual consistency&lt;/div&gt;&lt;div&gt;- highly reliable i.e data should not be lost&lt;/div&gt;&lt;div&gt;- 301/302 redirection&lt;/div&gt;&lt;div&gt;- analytics if time permits&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="400" y="80" width="300" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="&lt;h1&gt;assumptions&lt;/h1&gt;&lt;div&gt;- 100M urls converted per day&lt;/div&gt;&lt;div&gt;- data has to be stored for 10 yrs&lt;/div&gt;&lt;div&gt;- read to write ratio 10:1&lt;/div&gt;&lt;div&gt;- [a-z A-Z 0-9] char are allowed which 62 char&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="280" width="300" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="&lt;h1&gt;BoE calculation&lt;/h1&gt;&lt;div&gt;- write req 100M /10^5 = 1000 /sec&amp;nbsp;&lt;/div&gt;&lt;div&gt;- read req = 10k/sec&lt;/div&gt;&lt;div&gt;- storage need = 100M*365*10 ~ 365B records&lt;/div&gt;&lt;div&gt;avg length of record is 100 bytes ~ 365B * 100 = 36.5TB&lt;/div&gt;&lt;div&gt;- length of short url 62^n &amp;gt;= 365B&lt;/div&gt;&lt;div&gt;- for n =7 we have 62^7 ~ 3.5 trillon&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="410" y="270" width="300" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="47">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="110" y="730" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="26" value="shortUrl" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="24">
+                    <mxGeometry x="0.1446" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="28" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="21">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="670" y="720" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="21" value="api servers" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="360" y="640" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" style="edgeStyle=none;html=1;" edge="1" parent="1" source="22">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="220" y="680" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="25" value="long url" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="23">
+                    <mxGeometry x="-0.2376" y="3" relative="1" as="geometry">
+                        <mxPoint y="1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="22" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+                    <mxGeometry x="70" y="680" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="api servers" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="370" y="650" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" style="edgeStyle=none;html=1;entryX=0;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="35" target="43">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="api servers" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="380" y="660" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="unique id generation service" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="540" y="500" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" style="edgeStyle=none;html=1;" edge="1" parent="1" source="43" target="45">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="unique id generation service" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="550" y="510" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="mysql&amp;nbsp;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+                    <mxGeometry x="730" y="420" width="60" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" style="edgeStyle=none;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="47" target="21">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="LB" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                    <mxGeometry x="220" y="670" width="70" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="LB" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="680" width="70" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" value="NO SQL DB like dynmoDB" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+                    <mxGeometry x="670" y="670" width="60" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="mysql&amp;nbsp;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+                    <mxGeometry x="740" y="430" width="60" height="100" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

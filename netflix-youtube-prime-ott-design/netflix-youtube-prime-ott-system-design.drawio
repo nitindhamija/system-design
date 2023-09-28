@@ -1,0 +1,328 @@
+<mxfile host="65bd71144e">
+    <diagram id="-L3wbRQOxAVc19jSJBMi" name="Page-1">
+        <mxGraphModel dx="1576" dy="1676" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="86" style="edgeStyle=none;html=1;entryX=0;entryY=0;entryDx=0;entryDy=0;fillColor=#FFFFFF;" parent="1" source="105" target="84" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="90" y="250" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="108" style="edgeStyle=none;html=1;fontSize=14;fillColor=#FFFFFF;" parent="1" source="2" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="80" y="220" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="2" value="content creators" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="-60" y="130" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;functional requirements&lt;br&gt;1. upload videos&lt;br&gt;2. search videos&amp;nbsp;&lt;br&gt;3. watch videos&lt;br&gt;4. add to watchlist&lt;br&gt;5. no of views on a video&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="-380" width="330" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;non functional requirements&lt;br&gt;1. high availabality - eventual consisteny&amp;nbsp;&lt;br&gt;2. low latency&lt;br&gt;3.upload should be fast&lt;br&gt;4 reliability&lt;br&gt;5. minimal or no buffering&lt;br&gt;6. support different devices and bandwidth&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="460" y="-380" width="310" height="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" style="edgeStyle=none;html=1;startArrow=none;entryX=0;entryY=0;entryDx=0;entryDy=0;fillColor=#FFFFFF;" parent="1" source="98" target="110" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="670" y="405.89041095890434" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="490" y="160"/>
+                            <mxPoint x="450" y="280"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="135" style="edgeStyle=none;html=1;fontSize=14;fillColor=#FFFFFF;" parent="1" source="8" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="470" y="130" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="139" value="202 http" style="edgeStyle=none;html=1;" edge="1" parent="1" source="8">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="170" y="210" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="8" value="upload service" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="290" y="180" width="110" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="s3 raw storages&amp;nbsp; contains segmented videos" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="740" y="-140" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="&lt;br&gt;1 billion DAU&lt;br&gt;ratio of content creators to viewers 1:1000&lt;br&gt;viewers watch 5 videos/day&lt;br&gt;uploads 1 video/day&lt;br&gt;avg length of video 30 min and size 300MB&lt;br&gt;&lt;br&gt;1M videos are uploaded/day i.e&lt;br&gt;QPS for upload10 vidoes/sec&lt;br&gt;Peak QPS = 20/sec&lt;br&gt;&lt;br&gt;storage needed per day is&amp;nbsp;&lt;br&gt;1M*300MB/day ~&amp;nbsp; 300TB/day&lt;br&gt;&lt;br&gt;avg optmized thumnail size is 10KB i.e&lt;br&gt;so metadata db storage need/day&amp;nbsp;&lt;br&gt;10KB*1M ~ 10GB/day&lt;br&gt;&lt;br&gt;encoding process takes 5 min&amp;nbsp;&lt;br&gt;3k videos req are queued every 5 min" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-400" y="90" width="240" height="300" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="upload service" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="300" y="190" width="110" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="upload service" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="310" y="200" width="110" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" style="edgeStyle=none;html=1;entryX=0.009;entryY=0.666;entryDx=0;entryDy=0;entryPerimeter=0;fillColor=#FFFFFF;" parent="1" source="20" target="8" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="71" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fillColor=#FFFFFF;" parent="1" source="20" target="61" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="88" style="edgeStyle=none;html=1;entryX=0.193;entryY=0.015;entryDx=0;entryDy=0;entryPerimeter=0;fillColor=#FFFFFF;" parent="1" source="20" target="76" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="Load balancer" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="91" y="180" width="79" height="79" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.083;entryY=0.417;entryDx=0;entryDy=0;entryPerimeter=0;fillColor=#FFFFFF;" parent="1" source="23" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="709.96" y="215.01999999999998" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="23" value="message/task queue" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
+                    <mxGeometry x="490" y="190" width="170" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="117" style="edgeStyle=none;html=1;fontSize=14;fillColor=#FFFFFF;" parent="1" source="40" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="810" y="-30" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="40" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="710" y="40" width="260" height="260" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="video splitter" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="760" y="50" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="encoding to diff formats like HLS DASH, HQ 4k, 1040p, 720p,360p etc" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="750" y="130" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="encoding to diff resolution" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="750" y="210" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="720" y="50" width="260" height="260" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="video splitter" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="770" y="60" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="encoding to diff formats like HLS DASH, HQ 4k, 1040p, 720p,360p etc" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="760" y="140" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="encoding to diff resolution" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="760" y="220" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="730" y="60" width="260" height="260" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="video splitter" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="780" y="70" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" value="encoding to diff formats like HLS DASH, HQ 4k, 1040p, 720p,360p etc" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="770" y="150" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" value="encoding to diff resolution" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="770" y="230" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="60" style="edgeStyle=none;html=1;entryX=0.625;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;fillColor=#FFFFFF;" parent="1" source="54" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="720" y="390" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="54" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="740" y="70" width="260" height="260" as="geometry"/>
+                </mxCell>
+                <mxCell id="55" value="video splitter" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="790" y="80" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="56" value="encoding to diff formats like HLS DASH, HQ 4k, 1040p, 720p,360p etc" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="780" y="160" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" value="encoding to diff resolution" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="780" y="240" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="61" value="search service&lt;span style=&quot;color: rgba(0, 0, 0, 0); font-family: monospace; font-size: 0px; text-align: start;&quot;&gt;%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%22upload%20service%22%20style%3D%22rounded%3D1%3BwhiteSpace%3Dwrap%3Bhtml%3D1%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22310%22%20y%3D%22200%22%20width%3D%22110%22%20height%3D%2260%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="300" y="400" width="110" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="64" value="5 billion videos watched/day i.e&lt;br&gt;50k videos/sec&amp;nbsp;&lt;br&gt;&lt;br&gt;&lt;br&gt;on avg video length is 30m&amp;nbsp;&lt;br&gt;avg 30m files size is .3 GB&lt;br&gt;bandwidth 1.5TB/sec" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-400" y="410" width="240" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="66" value="search service&lt;span style=&quot;color: rgba(0, 0, 0, 0); font-family: monospace; font-size: 0px; text-align: start;&quot;&gt;%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%22upload%20service%22%20style%3D%22rounded%3D1%3BwhiteSpace%3Dwrap%3Bhtml%3D1%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22310%22%20y%3D%22200%22%20width%3D%22110%22%20height%3D%2260%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="310" y="410" width="110" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="67" value="search service&lt;span style=&quot;color: rgba(0, 0, 0, 0); font-family: monospace; font-size: 0px; text-align: start;&quot;&gt;%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%22upload%20service%22%20style%3D%22rounded%3D1%3BwhiteSpace%3Dwrap%3Bhtml%3D1%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22310%22%20y%3D%22200%22%20width%3D%22110%22%20height%3D%2260%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="420" width="110" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="68" value="search service&lt;span style=&quot;color: rgba(0, 0, 0, 0); font-family: monospace; font-size: 0px; text-align: start;&quot;&gt;%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%22upload%20service%22%20style%3D%22rounded%3D1%3BwhiteSpace%3Dwrap%3Bhtml%3D1%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22310%22%20y%3D%22200%22%20width%3D%22110%22%20height%3D%2260%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="330" y="430" width="110" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="70" style="edgeStyle=none;html=1;startArrow=none;fillColor=#FFFFFF;" parent="1" source="72" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="670" y="438" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="69" value="search service&lt;span style=&quot;color: rgba(0, 0, 0, 0); font-family: monospace; font-size: 0px; text-align: start;&quot;&gt;%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%22upload%20service%22%20style%3D%22rounded%3D1%3BwhiteSpace%3Dwrap%3Bhtml%3D1%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22310%22%20y%3D%22200%22%20width%3D%22110%22%20height%3D%2260%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="340" y="440" width="110" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="73" value="" style="edgeStyle=none;html=1;endArrow=none;fillColor=#FFFFFF;" parent="1" source="69" target="72" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="450" y="463.01587301587324" as="sourcePoint"/>
+                        <mxPoint x="670" y="435.07936507936506" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="83" style="edgeStyle=none;html=1;entryX=0;entryY=1;entryDx=0;entryDy=0;exitX=1;exitY=1;exitDx=0;exitDy=-15;exitPerimeter=0;fillColor=#FFFFFF;" parent="1" source="72" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="600" y="480" as="sourcePoint"/>
+                        <mxPoint x="670" y="470" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="72" value="cache" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
+                    <mxGeometry x="530" y="420" width="60" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="90" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;fillColor=#FFFFFF;" parent="1" source="76" target="84" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="76" value="view video service" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="600" width="110" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="77" value="view video service" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="290" y="610" width="110" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="78" value="view video service" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="300" y="620" width="110" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="79" value="view video service" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="310" y="630" width="110" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="80" value="view video service" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="640" width="110" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="82" style="edgeStyle=none;html=1;entryX=0.333;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;fillColor=#FFFFFF;" parent="1" source="81" target="72" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="81" value="view video service" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="330" y="650" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="89" style="edgeStyle=none;html=1;entryX=-0.033;entryY=0.901;entryDx=0;entryDy=0;entryPerimeter=0;fillColor=#FFFFFF;" parent="1" source="84" target="76" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="84" value="CDN" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="110" y="610" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="91" value="CDN" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="120" y="620" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="123" style="edgeStyle=none;html=1;fontSize=14;fillColor=#FFFFFF;" parent="1" source="92" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="900" y="560" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="92" value="message queue" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
+                    <mxGeometry x="930" y="445" width="170" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="102" style="edgeStyle=none;html=1;fontSize=14;fillColor=#FFFFFF;" parent="1" source="97" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1110" y="210" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="128" style="edgeStyle=none;html=1;fontSize=14;fillColor=#FFFFFF;" parent="1" source="97" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1030" y="440" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="97" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="750" y="80" width="260" height="260" as="geometry"/>
+                </mxCell>
+                <mxCell id="99" value="encoding to diff formats like MPEG, HLS DASH, HQ 4k, 1040p, 720p,360p etc" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="790" y="170" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="100" value="encoding to diff resolution" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="790" y="250" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="104" style="edgeStyle=none;html=1;fontSize=14;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fillColor=#FFFFFF;" parent="1" source="101" target="91" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="160" y="730" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="1170" y="720"/>
+                            <mxPoint x="190" y="730"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="129" value="push bsaed cache CDN" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;" parent="104" vertex="1" connectable="0">
+                    <mxGeometry x="0.206" y="2" relative="1" as="geometry">
+                        <mxPoint x="-1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="101" value="transcoded s3 storage" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="1120" y="130" width="100" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="107" style="edgeStyle=none;html=1;fontSize=14;fillColor=#FFFFFF;" parent="1" source="105" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="80" y="250" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="105" value="viewers" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="-60" y="280" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="110" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;" parent="1" vertex="1">
+                    <mxGeometry x="680" y="400" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="111" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;" parent="1" vertex="1">
+                    <mxGeometry x="690" y="410" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="112" value="&lt;div&gt;Metadata DB&lt;/div&gt;&lt;div&gt;(Nosql dynmoDB)&lt;/div&gt;&lt;div&gt;sharded/replicated&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;" parent="1" vertex="1">
+                    <mxGeometry x="700" y="420" width="120" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="116" value="transcoding service" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" parent="1" vertex="1">
+                    <mxGeometry x="840" y="110" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="126" style="edgeStyle=none;html=1;fontSize=14;fillColor=#FFFFFF;" parent="1" source="122" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="770" y="520" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="122" value="completion hanlders" style="whiteSpace=wrap;html=1;aspect=fixed;fontSize=14;" parent="1" vertex="1">
+                    <mxGeometry x="840" y="570" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="124" value="completion hanlders" style="whiteSpace=wrap;html=1;aspect=fixed;fontSize=14;" parent="1" vertex="1">
+                    <mxGeometry x="850" y="580" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="127" style="edgeStyle=none;html=1;fontSize=14;entryX=0.855;entryY=1;entryDx=0;entryDy=-4.35;entryPerimeter=0;fillColor=#FFFFFF;" parent="1" source="125" target="138" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="580" y="510" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="130" style="edgeStyle=none;html=1;fontSize=14;fillColor=#FFFFFF;" parent="1" source="125" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="-70" y="170" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="900" y="790"/>
+                            <mxPoint x="-100" y="800"/>
+                            <mxPoint x="-100" y="200"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="131" value="video is uploaded &amp;amp; ready" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;" parent="130" vertex="1" connectable="0">
+                    <mxGeometry x="0.0139" relative="1" as="geometry">
+                        <mxPoint x="-1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="125" value="completion hanlders" style="whiteSpace=wrap;html=1;aspect=fixed;fontSize=14;" parent="1" vertex="1">
+                    <mxGeometry x="860" y="590" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="133" style="edgeStyle=none;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;fontSize=14;fillColor=#FFFFFF;" parent="1" source="98" target="9" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="136" style="edgeStyle=none;html=1;fontSize=14;fillColor=#FFFFFF;" parent="1" source="98" target="23" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="98" value="video splitter" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="460" y="72.5" width="120" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="137" value="cache" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
+                    <mxGeometry x="540" y="430" width="60" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="138" value="cache" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
+                    <mxGeometry x="550" y="440" width="60" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="140" value="Load balancer" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                    <mxGeometry x="101" y="190" width="79" height="79" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

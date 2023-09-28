@@ -1,4 +1,5 @@
 # Table of contents
+
 - [Table of contents](#table-of-contents)
 - [study material refernces](#study-material-refernces)
 - [HorizontalScaling](#horizontalscaling)
@@ -10,18 +11,20 @@
   - [ConsistentHashing](#consistenthashing)
     - [links for guide and code](#links-for-guide-and-code)
     - [code walkthrough](#code-walkthrough)
+- [CAP theorem](#cap-theorem)
+- [bloom filter](#bloom-filter)
 - [MessagingQueue](#messagingqueue)
   - [TODO](#todo)
-  - [reference_links](#reference_links)
-  - [use_cases](#use_cases)
-    - [a_simple_use_case](#a_simple_use_case)
-    - [use_case_Imaging_service](#use_case_imaging_service)
-    - [use_case_email_service](#use_case_email_service)
-    - [use_case_with_problem_and_need_of_message_queue](#use_case_with_problem_and_need_of_message_queue)
+  - [reference\_links](#reference_links)
+  - [use\_cases](#use_cases)
+    - [a\_simple\_use\_case](#a_simple_use_case)
+    - [use\_case\_Imaging\_service](#use_case_imaging_service)
+    - [use\_case\_email\_service](#use_case_email_service)
+    - [use\_case\_with\_problem\_and\_need\_of\_message\_queue](#use_case_with_problem_and_need_of_message_queue)
   - [General Scenario for using message queue](#general-scenario-for-using-message-queue)
-  - [comparsion_of_diff_message_queue](#comparsion_of_diff_message_queue)
-    - [zeroMQ_vs_RabbitMQ/ActiveMQ](#zeromq_vs_rabbitmqactivemq)
-    - [RabbitMQ_vs_ActiveMQ](#rabbitmq_vs_activemq)
+  - [comparsion\_of\_diff\_message\_queue](#comparsion_of_diff_message_queue)
+    - [zeroMQ\_vs\_RabbitMQ/ActiveMQ](#zeromq_vs_rabbitmqactivemq)
+    - [RabbitMQ\_vs\_ActiveMQ](#rabbitmq_vs_activemq)
   - [inter-service communication vs job processing use case](#inter-service-communication-vs-job-processing-use-case)
   - [installation on windows](#installation-on-windows)
 - [database design choosing the right database](#database-design-choosing-the-right-database)
@@ -30,12 +33,60 @@
   - [Functional Requirements](#functional-requirements)
   - [Non Functional Requirements](#non-functional-requirements)
 - [TODO](#todo-1)
-
+- [design a key value database](#design-a-key-value-database)
+- [design a unique id generator](#design-a-unique-id-generator)
+- [design url shortner TODO mock](#design-url-shortner-todo-mock)
+  - [reference](#reference)
+  - [HLD](#hld)
+- [design search autocomplete system](#design-search-autocomplete-system)
+- [redis ( remote dictionary server)](#redis--remote-dictionary-server)
+  - [what is redis](#what-is-redis)
+  - [usecases](#usecases)
+  - [interview response on usage of redis in project](#interview-response-on-usage-of-redis-in-project)
+    - [session management using redis in portex](#session-management-using-redis-in-portex)
+    - [Problem](#problem)
+    - [Probable Solutions](#probable-solutions)
+    - [@EnableRedisHttpSession](#enableredishttpsession)
+  - [installed redisinsights for visualizing redis data](#installed-redisinsights-for-visualizing-redis-data)
+  - [data persistence in redis](#data-persistence-in-redis)
+  - [java client to connect application to redis](#java-client-to-connect-application-to-redis)
+  - [data types in redis](#data-types-in-redis)
+    - [string](#string)
+    - [redis lists](#redis-lists)
+- [CDN Content delivery network](#cdn-content-delivery-network)
+- [database sharding](#database-sharding)
+  - [resources](#resources)
+  - [Shard or Partition Key](#shard-or-partition-key)
+  - [type of sharding](#type-of-sharding)
+  - [problems with sharding](#problems-with-sharding)
+  - [hash based sharding](#hash-based-sharding)
+  - [dynamic sharding](#dynamic-sharding)
+  - [sharding a RDBMS](#sharding-a-rdbms)
+  - [amazone dynmodb](#amazone-dynmodb)
+  - [youtube's Vitess to shard mysql server (TODO)](#youtubes-vitess-to-shard-mysql-server-todo)
+- [why we used mongo db in our PORTEX](#why-we-used-mongo-db-in-our-portex)
+- [Difference between RDBMS and NoSQL databases](#difference-between-rdbms-and-nosql-databases)
+  - [NoSQL database misconceptions](#nosql-database-misconceptions)
+    - [Misconception: relationship data is best suited for relational databases](#misconception-relationship-data-is-best-suited-for-relational-databases)
+    - [Misconception: NoSQL databases don't support ACID transactions](#misconception-nosql-databases-dont-support-acid-transactions)
+- [geospatial DB (designing a proximity server by alex xu)](#geospatial-db-designing-a-proximity-server-by-alex-xu)
+- [design bookmyshow (DB design imp) TODO](#design-bookmyshow-db-design-imp-todo)
 
 # study material refernces
 
-gaurav sen
-
+- gaurav sen youtube and interview ready
+- code karle youtube and udemy 
+- exponent youtube mock interviews 
+- alex xu system design vol1 and vol 2 book
+- designing data intensive applications book
+- engineering blogs 
+- saved posts on linkedin
+- https://www.tryexponent.com/blog/system-design-interview-guide
+- google youtube channel
+- https://www.youtube.com/playlist?list=PLeKd45zvjcDFUEv_ohr_HdUFe97RItdiB
+- https://www.hiredintech.com/classrooms/system-design/lesson/55
+- https://levelup.gitconnected.com/system-design-interview-survival-guide-2023-preparation-strategies-and-practical-tips-ba9314e6b9e3
+ 
 # HorizontalScaling
 
 is adding more resources i.e in case of aws ec2 instances of 1cpu 2 gb ram adding more ec2 instances to handle the load so in essence we add more resources to handle the increased load.
@@ -82,7 +133,7 @@ https://michaelnielsen.org/blog/consistent-hashing/
 Now if think about the caching scenario above the problem with this configuration is when we add and or remove the servers.
 let's say i add another server 5 now many of the request which were going to let's s1 will go to s2 now and many of the req going to s2 will now go to s3 and same for rest of the servers so their caches stored at old servers will not be useful anymore.
 
-since there are 5 servers the load will 20% each so now observer below the change impact
+since there are 5 servers the load will be 20% on each so now observer below the change impact
 
 s1 5% load will go to s2 and
 s2 will have 5% new load from s1 i.e to build new cache
@@ -115,7 +166,8 @@ now req using the hashing {hash(req_id/user_id)/4 } will give some point locatio
 
 change will be 1/(n+1) for adding a server which quite low so it quite effective technique and used in lot of places web caches, databases, memcahed, Amazon’s Dynamo key-value store etc.
 
-![](notes_images/systemdesign1.jpg)
+![](img/systemdesign1.jpg)
+
 
 ### links for guide and code
 
@@ -125,9 +177,11 @@ https://michaelnielsen.org/blog/consistent-hashing/
 
 ### code walkthrough
 
-if you look at the code hash function is what will gives the point locations on the ring where server will placed logically and nodepositions map contains the node and it's corresponding all postion i.e node1,[1,11,41] etc
-nodemapping map contains the mapping of point locations and nodes in sorted order of point locations
-sorting here is for clockwise direction navigation
+if you look at the code of hash function this is what will gives the virtual points locations on the ring where server will placed logically
+
+- nodepositions map contains the node and it's corresponding all virtual positions i.e node1,[1,11,41] etc
+- nodemapping map is navigable map implementation like treeMap or concurrentSkipListMap that contains the mapping of virtual point locations to real nodes in sorted order of point locations
+  sorting here is for clockwise direction navigation
 
 and we need three functions here one to add node, remove node and getassigned node
 
@@ -135,14 +189,24 @@ now pointmultiplier specifies how many virtual positions we want for a server if
 node1->[1,31]
 node2->[11,41]
 
-in add function
-loop the pointmultiplier times i.e 2 times apply the hash function on server/node (i \* pointmultiplier)+ nodeid to get the actual postion on ring and then store the result to nodemappings map and nodeposition map
+- in add function
+  loop the pointmultiplier times i.e 2 times apply the hash function on server/node (i \* pointmultiplier)+ nodeid to get the virtual position on ring and then store the result to nodemappings map and nodeposition map
 
-in remove function remove the node from nodepositions and then all positions from node mappings for the node
+- in remove function remove the node from nodepositions and then all positions from node mappings for the node
 
-in get assigned node function
+- in get assigned node function
 
 apply the hash function to req to get the position on ring and then nodemapping.higherEntry(req_position) will give the node which will handle the request
+
+# CAP theorem
+C stands for consistency 
+A stands for availability
+P stands for partition tolerance
+
+- for any distributed system CAP theorem stats that only 2 of these properties can be guarantied and practally it is assumed that network partition can not be avoided so partition tolerance has to be part of the system design, therefore choice is to make tradeoff between consistency & availability. e.g for bank transaction systems consistency is preferred over availability and for systems like youtube or other ott availability is more important than consistency
+
+# bloom filter
+watch bytebyte go youtube video
 
 # MessagingQueue
 
@@ -239,36 +303,368 @@ https://www.rabbitmq.com/tutorials/tutorial-six-java.html
 # database design choosing the right database
 
 - choice of data generally depends
+
   - structucted or not non structured data
   - the kind of query pattern
   - the amount of scale you want apply to the db
 
-- for caching solution you can use key paid database redis
-- where we want to store image/video kind of data i.e need of various OTT like netflix amazone prime hotstar  we need blob storage and there are various providers for blob storage service amazone s3 is one of best and cheap bloc storage service, And generally along with s3 it is good practice to use CDN so that all your content is distributed geographically to the edge locations and so can be served with low latency depeneding on where the user is requesting the video from.
+- for caching solution you can use key pair database redis
+- where we want to store image/video kind of data i.e need of various OTT like netflix amazone prime hotstar we need blob storage and there are various providers for blob storage service amazone s3 is one of best and cheap bloc storage service, And generally along with s3 it is good practice to use CDN so that all your content is distributed geographically to the edge locations and so can be served with low latency depeneding on where the user is requesting the video from.
 - if you want text searching capabilites like searhcing movies in netflix or searching items in amazone you need something like text search engine elastic search and solr are two such solutions however these are not database these are search engine diff is database ensures consistenty about the data but search engine don't so these should not be used as primary source of data.Also they support fuzzy search as well now when you type airprot mistakenly on netflix still airport comes in result, you know how? well there's change of only 2 character i.e if r and o switch position it becomes airport i.e that edit distance is 2 i.e swicthing 2 character gives a word so that is what fuzzy search is
-- when we have metrics kind of data like cpu, memory untilization then we don't do random updates we do sequential updates like data at t1 is appended before data at t2 and so on and read queries are king od bulk head like last 10 min or data 1 hour , last week so time series databases are optimized for these kind of input and output pattern influxDB and openTSDB are some of the example of Time Series db
-# choosing structured or non structured database 
- ![](img/db_design.jpg)
- ![](img/acid.jpg)
-  - so if you want structured data and data should follow acid property then go for RDBMS(orange, mysql, postgres etc)
-  - however if you want structured data but acid property are not mandatory then you can use either RDBMS or no sql db like mongo db
-  - if you have unstructured data like catalogue items in amazone now item can be shirt with size and color attribute and item could refrigerator with attribute volume, weight and query pattern could be large since there would be so many attributes of diff catalogue items then you can use document db, mongodb and couchbase are 2 such kind of db.
-  - if you have unstructured data and data is ever increasing but query pattern are limited then you use columnar db cassandra is one such db take example of uber where drivers are sending their locations every day and with new onboards it keeps on increasing so it is an ever increasing data and queries would be finite like which driver is near to this user locations etc
+- when we have metrics kind of data like cpu, memory untilization then we don't do random updates we do sequential updates like data at t1 is appended before data at t2 and so on and read queries are kind of bulk head like last 10 min data or 1 hour , last week so time series databases are optimized for these kind of input and output pattern influxDB and openTSDB are some of the example of Time Series db
+
+# choosing structured or non structured database
+
+![](img/db_design.jpg)
+![](img/acid.jpg)
+
+- so if you want structured data and data should follow acid property then go for RDBMS(orange, mysql, postgres etc)
+- however if you want structured data but acid property are not mandatory then you can use either RDBMS or no sql db like mongo db
+- if you have unstructured data like catalogue items in amazone now item can be shirt with size and color attribute and item could refrigerator with attribute volume, weight and query pattern could be large since there would be so many attributes of diff catalogue items then you can use document db, mongodb and couchbase are 2 such kind of db.
+- if you have unstructured data and data is ever increasing but query pattern are limited then you use columnar db cassandra is one such db take example of uber where drivers are sending their locations every day and with new onboards it keeps on increasing so it is an ever increasing data and queries would be finite like which driver is near to this user locations etc
 
 # amazone system design (ecommerce system design)
+
 ## Functional Requirements
+
 - search(should also say whether items is available and can be delivered or not at front and not at the time of checkout)
 - cart/wishlist
 - checkout
 - view order
-  
- ## Non Functional Requirements
- - low latency(required for catalogue search, not for inventory update etc)
- - high availability(required for catalogue search)
- - high consistency (required for inventory and order service, payment service)
+
+## Non Functional Requirements
+
+- low latency(required for catalogue search, not for inventory update etc)
+- high availability(required for catalogue search)
+- high consistency (required for inventory and order service, payment service)
 
 ![](img/amazone_design.jpg)
 ![](img/amazone_sd1.jpg)
 ![](img/amazone_sd2.jpg)
+
 # TODO
+
 - read about kafka
+
+# design a key value database
+
+redis is a very good example of key value datastore even though there other usage of it also
+
+when designing a key value db, you need to ask and discuss below points.
+
+- what would the max key value pair size it should accomadate?
+- how much data should it handle small or very large amount? i.e to figure out we need a single server setup or distributed setup
+- acceptable latency
+- data partitioning in a distributed system- use consistent hashing
+- CAP theorem to decide on which guaranties are imp for the system consistency vs availability since network partion can't be avoided in real world
+- consistency is more imp e.g in banking system consistency is more imp as they don't want to show inconsistent data rather they would prefer unavailabilty
+- similarly in other systems like e com platforms availbilty is more imp rather than consitency i.e they generally apply eventual consistency model
+- consistency model strong, weak, eventual
+- how to tune consistency model using quorum consenses
+- gossip protocol to detect node failures
+- handing consistency failures, temp failurer are handled by hinted handoff, perm failures are handled my synch replicas using merkle trees
+
+# design a unique id generator
+
+- using uuid (universary unique identifier) is 128 bit long identifier and can be generated at web server layer chances of collision is very less but it is alphanumeric and might not fit requirements
+- using ticket server to issue unique identifiers but again it cause SOP failures however you can setup multi server setup but still all other issues like synchronisation will be there.
+- twitter snowflake approach as shown in below image you reserve 41 bits for timestamp and 5 bits for data center id and 5 bits for machine id and 12 bits for seq no
+- refer book for more details
+- ![](img/snowflake.jpg)
+
+# design url shortner TODO mock
+## reference
+- codekarle https://www.youtube.com/watch?v=AVztRY77xxA&t=693s
+- system design by alex xu 
+- grokking the system design
+## HLD 
+- questions about traffic volume, how short the url should be, what all char are allowed in shortened url?
+- backup of the envelop calculation based on 100 mil req per day
+- high level design having 2 api one for shorten the url and other for redirecting to orig long url
+- api flow diagram with client and servers and for redirection discuss about 301 (permanent move) and 302 (temp move)
+- deep dive for url shortening service i.e
+- data model in memory is good only for small app and not feasible for real world scenarios so use (RDBMS) with id, short url, long url structure
+- choosing correct hash function (to choose correct hash function use back of the envelop estimation i.e to support 365 billion urls with hashvalue allowed [0-9, a-z, A-Z] 62 char) 62^n> = 365 billion so n = 7
+- we can use base 62 conversion hash function here once we get a req for shorten we first get db unique id do base 62 conversion on it and and return the save and return shorten url in db
+- but this is not efficient i.e for every req get unique id from the database and then generate short url and store back
+- so now talk about globally unique id generation way -> redis - then redis sop problem -> range-allocation-service backed by mysql(range, isFree) or twitter unique id generator like snakeflow
+- then talk about analytics (clicks, geographies) etc for help in making business decision capturing these user info like agent(andriod, ios, google, mozilla), ip address of user, along with other user info and push this in asyn mode to some processing queue like kafka 
+ 
+# design search autocomplete system
+
+- questions(how many search suggestions? traffic volume? which criteria to use to show suggestions like freq or some other parameters, matching should start from begining of the query or it can be middle as well, search in english)
+- requirements( 5, 10 million, historical query freq, yes begining only, only english, fast response time, low latency <100ms>, should be sorted based on some paramters like popularity, suggestions should be relevant, scalable and HA)
+- back of the envelop estimation (refer book)
+-
+
+# redis ( remote dictionary server)
+
+- https://www.youtube.com/watch?v=OqCK95AS-YE(redis crash course TechWorld with Nana)
+
+## what is redis
+
+- is an in memory db having more than 15 data structures to store diff type of data
+  ![](img/redis7.jpg)
+- can support multiple usecases with mutli model data
+
+![](img/redis6.jpg)
+
+## usecases
+
+![](img/redis5.jpg)
+
+- used as cache
+- fully fledged primary db and can be used to store multiple data formats
+- used as session store(portex) to store session info like username, expiration etc
+- used as distributed locks with it's atomic operation like setNX or set if not exists
+  ![](img/redis4.jpg)
+  redisson is java implentation for redis locks library
+- used as rate limiter
+- game leader board
+- pub/sub system i.e redis streams
+
+## interview response on usage of redis in project
+###  session management using redis in portex
+- https://gvnix.medium.com/sticky-sessions-with-spring-session-redis-bdc6f7438cc3
+### Problem
+You have multiple instances of a microservice behind a load balancer and you need the session to be maintained for the user after successful authorization, regardless of which instance is executing the request. so that is httpsession is to be replaced with spring session backed by a common db like redis
+
+### Probable Solutions
+Centralized Sessions — Maintain sessions in a common location for all instances to share i.e redis store.
+We need to save this session somewhere that is common to every instance. And that common place should be very fast to return back the details of the session.
+
+- in portex we are using redis distributed cache service to store session data e.g prinicple name and session expiration etc.
+  ![](img/redis2.jpg)
+- when a users logs in it's session info is stored in redis along with session id which returned to client as cookie
+- now with every req is this session id is passed and the web server makes a query to redis to fetch the session data
+- also implemented rate limiter in proj and used redis
+- using cache is important if we are using some thrid party api wich are chargeable per req basis
+
+![](img/redis1.jpg)
+
+### @EnableRedisHttpSession
+
+This annotation when parsed, creates a Spring Bean with the name of springSessionRepositoryFilter that implements Filter. The filter is in charge of replacing the HttpSession implementation to be backed by Spring Session. In this instance, Spring Session is backed by Redis.
+
+## installed redisinsights for visualizing redis data
+
+- installed redis insights locally
+- use ssh local port forwarding like mongodb to DCS in FE on sandbox env
+
+## data persistence in redis
+
+- using snapshot
+- using AOF i.e append only file to rebuild the state on failure
+  ![](img/redis3.jpg)
+- these options are not practical as they talk to long to recover so instead replication is used for practical purposes
+
+## java client to connect application to redis
+
+- https://redis.io/docs/clients/java/
+
+```
+<dependency>
+    <groupId>redis.clients</groupId>
+    <artifactId>jedis</artifactId>
+    <version>4.3.1</version>
+</dependency>
+```
+
+- in portex we are using
+
+```
+  <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.session</groupId>
+            <artifactId>spring-session-data-redis</artifactId>
+        </dependency>
+```
+
+- Spring Session Data Redis - provides SessionRepository and ReactiveSessionRepository implementation backed by Redis and configuration support
+- https://docs.spring.io/spring-session/docs/current/api/org/springframework/session/data/redis/RedisIndexedSessionRepository.html
+
+## data types in redis
+
+- check redis official guide
+
+### string
+
+- increment counter use case
+
+```
+INCR views:page:2
+(integer) 1
+> INCRBY views:page:2 10
+(integer) 11
+```
+
+- Managing counters
+- INCRBY atomically increments (and decrements when passing a negative number) counters stored at a given key.
+- Another command exists for floating point counters: INCRBYFLOAT.
+
+- basic string operations
+
+```
+SET stores a string value.
+SETNX stores a string value only if the key doesn't already exist. Useful for implementing locks.
+GET retrieves a string value.
+MGET retrieves multiple string values in a single operation.
+```
+
+- Most string operations are O(1), which means they're highly efficient.However, be careful with the SUBSTR, GETRANGE, and SETRANGE commands, which can be O(n). These random-access string commands may cause performance issues when dealing with large strings
+
+### redis lists
+
+Redis lists are linked lists of string values. Redis lists are frequently used to:
+
+- Implement stacks and queues.
+- Build queue management for background worker systems.
+
+Treat a list like a queue (first in, first out):
+
+```
+> LPUSH work:queue:ids 101
+(integer) 1
+> LPUSH work:queue:ids 237
+(integer) 2
+> RPOP work:queue:ids
+"101"
+> RPOP work:queue:ids
+"237"
+```
+
+Treat a list like a stack (first in, last out):
+
+```
+> LPUSH work:queue:ids 101
+(integer) 1
+> LPUSH work:queue:ids 237
+(integer) 2
+> LPOP work:queue:ids
+"237"
+> LPOP work:queue:ids
+"101"
+```
+
+- basic operations
+
+```
+LPUSH adds a new element to the head of a list; RPUSH adds tothe tail.
+LPOP removes and returns an element from the head of a list;RPOP does the same but from the tails of a list.
+LLEN returns the length of a list.
+LMOVE atomically moves elements from one list to another.
+LTRIM reduces a list to the specified range of elements.
+```
+
+# CDN Content delivery network
+- https://www.youtube.com/watch?v=8zX0rue2Hic&list=PLMCXHnjXnTnvo6alSjVkgxV-VH6EPyvoX&index=16
+these are the edge servers located across many parts of the world which hosts the static content like images, videos, css, js etc
+- reduce latency
+- saves network traffic cost
+- hosting server close to users geographically
+- follows regulations
+- allows posting content to CDN server via UI
+- can put TTL expiration on content as well
+- akamai , coudfront are popular CDN
+ 
+# database sharding
+
+## resources
+- https://medium.com/@jeeyoungk/how-sharding-works-b4dec46b3f6
+
+
+- Sharding is a method of splitting and storing a single logical dataset in multiple databases.By distributing the data among multiple machines, a cluster of database systems can store larger dataset and handle additional requests.
+- this is done to improve on the performance part so that your database can match higher no of request per second coming from web layer/app layer and consequenctly reduce the latency on our backend service.
+## Shard or Partition Key 
+- Shard or Partition Key is a portion of primary key which determines how data should be distributed such as a specific customer ID, geographic location, or other attributes etc
+- Entries with the same partition key are stored in the same node. A logical shard is a collection of data sharing the same partition key.
+- A database node, sometimes referred as a physical shard, contains multiple logical shards.
+## type of sharding
+- Vertical - A database can be split vertically — storing different tables & columns in a separate database, or
+- horizontally — storing rows of a same table in multiple database nodes.
+![](img/sharding_types.JPG)
+```
+# Example of vertical partitioning
+fetch_user_data(user_id) -> db[“USER”].fetch(user_id)
+fetch_photo(photo_id) ->    db[“PHOTO”].fetch(photo_id)
+# Example of horizontal partitioning
+fetch_user_data(user_id) -> user_db[user_id % 2].fetch(user_id)
+```
+## problems with sharding
+- joins across shards is expensive
+- Resharding data can be challenging, It requires updating the sharding function and moving data around the cluster. Doing both at the same time while maintaining consistency and availability is hard. Clever choice of sharding function can reduce the amount of transferred data. Consistent Hashing is such an algorithm.i.e memcached is one such DB which uses consistent hashing to implement sharding, but since this is DB sharding we can't tolerate even little reallocation
+- so hierarcial sharding comes to rescue it's the process of taking a shard and dynamically breaking it to smaller shards based on some key, generally a manager is assigned to each shard which does this process of sharding and mapping req to correct sub shard so this is how it solves this fixed no of shards problem
+
+## hash based sharding
+using a simple hash function based sharding 
+## dynamic sharding
+The internal workings of dynamic sharding in a distributed database typically involve a combination of techniques and components to route data to the correct shard.here's a general overview of how it can work, including the use of locator services
+
+- Shard Metadata: Dynamic sharding systems maintain metadata that describes the current state of the shards in the database. This metadata includes information about which shard contains which range of data, such as a range of customer IDs or other partitioning keys. This metadata is usually stored in a centralized or distributed repository that can be accessed by the database components.
+- Shard Locator Service: In some systems, there may be a shard locator service. This service maintains mappings between the data's partitioning keys and the corresponding shard's location. When a request is made, the locator service is queried to find the shard responsible for the requested data.
+- Routing Key: The data operation typically includes a routing key, which is a value based on the sharding criteria. This routing key is used to look up the appropriate shard in the shard locator service or metadata. For example, if sharding is based on customer ID, the customer's ID is used as the routing key.
+- Request Forwarding: Once the correct shard is identified, the routing layer forwards the data operation to that shard for processing. This can involve sending the request directly to the shard's database server.
+ 
+## sharding a RDBMS
+Previous examples are geared towards key-value operations. However, many databases have more expressive querying and manipulation capabilities. Traditional RDBMS features such as joins, indexes and transactions reduce complexity for an application. 
+Store related entities in the same partition to provide additional capabilities within a single partition. Specifically:
+- Queries within a single physical shard are efficient.
+- Stronger consistency semantics can be achieved within a shard.
+This is a popular approach to shard a relational database. In a typical web application data is naturally isolated per user. Partitioning by user gives scalability of sharding while retaining most of its flexibility. 
+
+## amazone dynmodb
+Amazon DynamoDB is optimized for high-speed read operations primarily through its architecture and features. 
+- SSD Storage: DynamoDB stores data on high-speed SSD (Solid State Drive) storage, which offers low latency and quick access times.
+- Data Partitioning: DynamoDB automatically partitions data across multiple physical servers to distribute the workload and provide fast access to data. This partitioning is based on the partition key (also known as the hash key), which helps evenly distribute data and queries across partitions.
+- In-Memory Caching: DynamoDB employs an in-memory cache for frequently accessed data, which can significantly reduce read latency. 
+- Parallel Scans and Queries: DynamoDB supports parallel scans and queries, enabling applications to fetch data from multiple partitions simultaneously. This parallelism enhances read performance, especially when retrieving a large volume of data.
+- Read Consistency: DynamoDB offers configurable read consistency. You can choose between "eventual consistency" or "strong consistency" for each read operation. Strongly consistent reads ensure that you always read the latest data but might have slightly higher latency compared to eventually consistent reads.
+## youtube's Vitess to shard mysql server (TODO)
+- is a database clustering system for horizontal scaling of MySQL through generalized sharding.
+
+By encapsulating shard-routing logic, Vitess allows application code and database queries to remain agnostic to the distribution of data onto multiple shards. With Vitess, you can even split and merge shards as your needs grow, with an atomic cutover step that takes only a few seconds.
+
+Vitess has been a core component of YouTube's database infrastructure since 2011, and has grown to encompass tens of thousands of MySQL nodes.
+
+
+# why we used mongo db in our PORTEX
+- https://www.mongodb.com/nosql-explained
+- since we have a microservices based architecture, and most of the services are independed of each other and are related to diff vendor modules like incident managerment, change management etc so we did not have highly relational data to begin with so use of RDBMS was not mandatory for us
+- so we weighed our choices based on other factors like schema flexibility, scalability and performance, redundancy
+- so we chose to have a flexible schema with better performance and scalibility of a no sql data base over the slight benefit of normalization in RDBMS 
+- i.e RDBMS have rigid schema that means any change in structure requires consideration migration effort which nosql does not require such change as we can have diff structure of documents in a collection
+- scaling a RDBMS horizontly via sharding is not as easy as it is for no sql database because no sql DB does not have any relations with other data or table and most of the no sql DB natively support sharding via partion keys while due to having relations with other tables/data sharding a RDBMS is hard and requires greater effort, then you have manage the sharding and routing logic at middleware or api layer. youtube vitess is an example of that.
+youtube vitess 
+
+##cons of no sql DB
+- hey don’t support ACID (atomicity, consistency, isolation, durability) transactions across multiple documents. MongoDB added support for multi-document ACID transactions in the 4.0 release, and extended them in 4.2 to span sharded clusters.
+- data duplication due to denormalization
+
+# Difference between RDBMS and NoSQL databases
+read the blog here for best ans https://www.mongodb.com/nosql-explained
+
+## NoSQL database misconceptions
+Over the years, many misconceptions about NoSQL databases have spread throughout the developer - community. In this section, we'll discuss two of the most common misconceptions:
+
+- Relationship data is best suited for relational databases.
+- NoSQL databases don't support ACID transactions.
+
+### Misconception: relationship data is best suited for relational databases
+A common misconception is that NoSQL databases or non-relational databases don’t store relationship data well. NoSQL databases can store relationship data — they just store it differently than relational databases do.
+
+In fact, when compared with relational databases, many find modeling relationship data in NoSQL databases to be easier than in relational databases, because related data doesn’t have to be split between tables. NoSQL data models allow related data to be nested within a single data structure.
+
+### Misconception: NoSQL databases don't support ACID transactions
+Another common misconception is that NoSQL databases don't support ACID transactions. Some NoSQL databases like MongoDB do, in fact, support ACID transactions.
+
+Note that the way data is modeled in NoSQL databases can eliminate the need for multi-record transactions in many use cases. Consider the earlier example where we stored information about a user and their hobbies in both a relational database and a document database. In order to ensure information about a user and their hobbies was updated together in a relational database, we'd need to use a transaction to update records in two tables. In order to do the same in a document database, we could update a single document — no multi-record transaction required.
+
+# geospatial DB (designing a proximity server by alex xu)
+- https://www.youtube.com/watch?v=M4lR_Va97cQ
+
+# design bookmyshow (DB design imp) TODO
+- https://astikanand.github.io/techblogs/high-level-system-design/design-bookmyshow
+- refer my design
