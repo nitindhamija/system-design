@@ -65,6 +65,7 @@
   - [amazone dynmodb](#amazone-dynmodb)
   - [youtube's Vitess to shard mysql server (TODO)](#youtubes-vitess-to-shard-mysql-server-todo)
 - [why we used mongo db in our PORTEX](#why-we-used-mongo-db-in-our-portex)
+- [choosing a databases i.e nosql or sql](#choosing-a-databases-ie-nosql-or-sql)
 - [Difference between RDBMS and NoSQL databases](#difference-between-rdbms-and-nosql-databases)
   - [NoSQL database misconceptions](#nosql-database-misconceptions)
     - [Misconception: relationship data is best suited for relational databases](#misconception-relationship-data-is-best-suited-for-relational-databases)
@@ -305,6 +306,7 @@ https://www.rabbitmq.com/tutorials/tutorial-six-java.html
 - choice of data generally depends
 
   - structucted or not non structured data
+  - ACID guaranties
   - the kind of query pattern
   - the amount of scale you want apply to the db
 
@@ -640,11 +642,16 @@ Vitess has been a core component of YouTube's database infrastructure since 2011
 youtube vitess 
 
 ##cons of no sql DB
-- hey don’t support ACID (atomicity, consistency, isolation, durability) transactions across multiple documents. MongoDB added support for multi-document ACID transactions in the 4.0 release, and extended them in 4.2 to span sharded clusters.
+- they don’t support ACID (atomicity, consistency, isolation, durability) transactions across multiple documents. MongoDB added support for multi-document ACID transactions in the 4.0 release, and extended them in 4.2 to span sharded clusters.
 - data duplication due to denormalization
+
+# choosing a databases i.e nosql or sql
+- refer kodekarle youtube video
 
 # Difference between RDBMS and NoSQL databases
 read the blog here for best ans https://www.mongodb.com/nosql-explained
+
+NoSQL databases (aka "not only SQL") are non-tabular databases and store data differently than relational tables. NoSQL databases come in a variety of types based on their data model. The main types are document, key-value, wide-column, and graph. They provide flexible schemas and scale easily with large amounts of data and high user loads.
 
 ## NoSQL database misconceptions
 Over the years, many misconceptions about NoSQL databases have spread throughout the developer - community. In this section, we'll discuss two of the most common misconceptions:

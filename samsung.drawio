@@ -1,0 +1,70 @@
+<mxfile host="65bd71144e">
+    <diagram id="FzPCV9cY2QjOvu3AY5Sp" name="Page-1">
+        <mxGraphModel dx="832" dy="576" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="anglar based login page&lt;br&gt;node js&lt;br&gt;npm&lt;br&gt;npm install ng core&lt;br&gt;packages.json&lt;br&gt;angular.json&lt;br&gt;main.js&lt;br&gt;appModule&lt;br&gt;@ngModule(&lt;br&gt;declaration:&lt;br&gt;exports,&lt;br&gt;imports(&lt;br&gt;In&lt;br&gt;&lt;br&gt;appCompnent&amp;nbsp;&amp;nbsp;&lt;br&gt;&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="110" y="170" width="300" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="&lt;h1&gt;login FR&lt;/h1&gt;&lt;div&gt;login feature&amp;nbsp;&lt;/div&gt;&lt;div&gt;SAML SSO&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="170" y="60" width="190" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="ng create compoennt logincompnent&lt;br&gt;&lt;br&gt;formCompoment&lt;br&gt;&lt;br&gt;&lt;br&gt;ngOnint(){&lt;br&gt;}&lt;br&gt;&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="520" y="200" width="210" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="&amp;lt;body&amp;gt;&lt;br&gt;&amp;lt;form name=&quot;loginForm&quot; &amp;gt;&lt;br&gt;&amp;lt;input name=&quot;username formGroupName&quot; &amp;gt; &amp;lt;/input&amp;gt;&lt;br&gt;&amp;lt;/body&amp;gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="510" y="340" width="230" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="7" target="9">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="confiure assertion&amp;nbsp;&lt;br&gt;spring boot sam metafile" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="110" y="540" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="gaurdian SAML" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="220" y="400" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="gateway" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="390" y="540" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="Spring java based confiruton&amp;nbsp;&lt;br&gt;&lt;br&gt;&lt;br&gt;SAMLAuthheander(){&lt;br&gt;&lt;br&gt;SAMLTOKEN&lt;br&gt;sprinbootcontex&lt;br&gt;&lt;br&gt;}" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="380" y="659" width="270" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="common-security&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="130" y="730" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" style="edgeStyle=none;html=1;" edge="1" parent="1" source="13" target="15">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="incident-service" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="220" y="900" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="SWR" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="340" y="1060" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" style="edgeStyle=none;html=1;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="15" target="14">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="deployment" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="620" y="980" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="kustomize&amp;nbsp;&lt;br&gt;base.yaml&lt;br&gt;service.yaml&lt;br&gt;&lt;br&gt;/prod&lt;br&gt;/deployment.yaml&lt;br&gt;/qa/deployment.yml&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="1020" width="140" height="280" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="CCE 9 nodes&lt;br&gt;VPC&lt;br&gt;subnets&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="360" y="1150" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="ui-deployment.yaml&lt;br&gt;name=inciden-serve&lt;br&gt;resource = -XMS512MB" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="270" y="1350" width="210" height="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="service.yaml" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="560" y="1410" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="&lt;h1&gt;ui-deployment&lt;/h1&gt;&lt;h1&gt;backend-deployment&lt;/h1&gt;&lt;div&gt;db-deployemnt&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;nodeIP&lt;/div&gt;&lt;div&gt;loadbalancer : exteralIP&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;ui-service.yaml&lt;/div&gt;&lt;div&gt;type: Loadbalancer&lt;/div&gt;&lt;div&gt;replica : 2&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;backedn-service.yaml&lt;/div&gt;&lt;div&gt;type:&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;clusterIP&lt;/span&gt;&lt;/div&gt;&lt;div&gt;replica:&amp;nbsp; 2&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;db-service.ym&lt;/div&gt;&lt;div&gt;type: ClusterIP&lt;/div&gt;&lt;div&gt;replica :&amp;nbsp; 1&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;replicaController&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;pod.yaml&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;volumes&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;secrets&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;configMap : application.yaml (port : 8080, context, log4j.xml)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="120" y="1540" width="500" height="540" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

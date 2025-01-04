@@ -4,24 +4,24 @@
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="2" value="&lt;h1&gt;google drive&lt;/h1&gt;&lt;div&gt;functional requirements&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- upload/ download files&lt;/div&gt;&lt;div&gt;- file sync across multiple client devices&lt;/div&gt;&lt;div&gt;- mantain version history of files&lt;/div&gt;&lt;div&gt;- notification on files updates&lt;/div&gt;&lt;div&gt;- share files to others&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+                <mxCell id="2" value="&lt;h1&gt;google drive&lt;/h1&gt;&lt;div&gt;functional requirements&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- upload/ download files&lt;/div&gt;&lt;div&gt;- file sync across multiple client devices&lt;/div&gt;&lt;div&gt;- mantain version history of files&lt;/div&gt;&lt;div&gt;- notification on files updates&lt;/div&gt;&lt;div&gt;- share files to others&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="90" y="80" width="190" height="170" as="geometry"/>
                 </mxCell>
-                <mxCell id="3" value="&lt;h1&gt;google drive&lt;/h1&gt;&lt;div&gt;non functional requirements&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- size limit on file uploads e.g 10GB&lt;/div&gt;&lt;div&gt;- files upload &amp;amp; download &amp;amp; synching should be fast i.e low latency&lt;/div&gt;&lt;div&gt;- privacy &amp;amp; security&lt;/div&gt;&lt;div&gt;- all file formats to support&amp;nbsp;&lt;br&gt;- strong consistency needed i.e eventual availability&lt;/div&gt;&lt;div&gt;- support both mobile &amp;amp; web app&lt;/div&gt;&lt;div&gt;- 10M daily active users (DAU)&lt;br&gt;- realiability i.e files once uploaded should be lost&lt;/div&gt;&lt;div&gt;- 10GB free space&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+                <mxCell id="3" value="&lt;h1&gt;google drive&lt;/h1&gt;&lt;div&gt;non functional requirements&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- size limit on file uploads e.g 10GB&lt;/div&gt;&lt;div&gt;- files upload &amp;amp; download &amp;amp; synching should be fast i.e low latency&lt;/div&gt;&lt;div&gt;- privacy &amp;amp; security&lt;/div&gt;&lt;div&gt;- all file formats to support&amp;nbsp;&lt;br&gt;- strong consistency needed i.e eventual availability&lt;/div&gt;&lt;div&gt;- support both mobile &amp;amp; web app&lt;/div&gt;&lt;div&gt;- 10M daily active users (DAU)&lt;br&gt;- realiability i.e files once uploaded should be lost&lt;/div&gt;&lt;div&gt;- 10GB free space&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="300" y="80" width="350" height="210" as="geometry"/>
                 </mxCell>
-                <mxCell id="4" value="&lt;h1&gt;back of the envelop calc&lt;/h1&gt;&lt;div&gt;10M DAU, Total 50 M users&lt;/div&gt;&lt;div&gt;total space needs 50M * 10GB = 500 PB&amp;nbsp;&lt;/div&gt;&lt;div&gt;upload to download ratio 1:1&amp;nbsp;&lt;br&gt;&lt;/div&gt;&lt;div&gt;avg upload 2 file/day per user ~ 20M/day&lt;/div&gt;&lt;div&gt;avg downloads 20M/day&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;QPS for upload &amp;amp; download = 20M/day ~ 200/sec&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;peak QPS&amp;nbsp; = 2 * QPS = 400/sec&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;avg file size&amp;nbsp; 1MB&lt;br&gt;&lt;/div&gt;&lt;div&gt;upload &amp;amp; download n/w bandwidth 20M*1MB / 84600 ~ 240 MB/s&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;avg metadata for file 500B&lt;br&gt;writes per day 20M*500B = 10GB&lt;br&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+                <mxCell id="4" value="&lt;h1&gt;back of the envelop calc&lt;/h1&gt;&lt;div&gt;10M DAU, Total 50 M users&lt;/div&gt;&lt;div&gt;total space needs 50M * 10GB = 500 PB&amp;nbsp;&lt;/div&gt;&lt;div&gt;upload to download ratio 1:1&amp;nbsp;&lt;br&gt;&lt;/div&gt;&lt;div&gt;avg upload 2 file/day per user ~ 20M/day&lt;/div&gt;&lt;div&gt;avg downloads 20M/day&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;QPS for upload &amp;amp; download = 20M/day ~ 200/sec&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;peak QPS&amp;nbsp; = 2 * QPS = 400/sec&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;avg file size&amp;nbsp; 1MB&lt;br&gt;&lt;/div&gt;&lt;div&gt;upload &amp;amp; download n/w bandwidth 20M*1MB / 84600 ~ 240 MB/s&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;avg metadata for file 500B&lt;br&gt;writes per day 20M*500B = 10GB&lt;br&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="-210" y="240" width="380" height="280" as="geometry"/>
                 </mxCell>
-                <mxCell id="5" value="api server" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                <mxCell id="5" value="api server" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
                     <mxGeometry x="460" y="580" width="80" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="13" style="edgeStyle=none;html=1;entryX=-0.051;entryY=0.368;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="12">
+                <mxCell id="13" style="edgeStyle=none;html=1;entryX=-0.051;entryY=0.368;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="12" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="180" y="569.9076110866697" as="sourcePoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="32" style="edgeStyle=none;html=1;exitX=1.035;exitY=0.175;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="IjdNnRh6WPfqS0u338YW-58">
+                <mxCell id="32" style="edgeStyle=none;html=1;exitX=1.035;exitY=0.175;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="IjdNnRh6WPfqS0u338YW-58" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="440" y="500" as="targetPoint"/>
                         <mxPoint x="360" y="560" as="sourcePoint"/>
@@ -30,48 +30,48 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="9" value="&lt;h1&gt;upload api's&lt;/h1&gt;&lt;div&gt;- POST https://gdrive.com/api/upload?uploadType= resumable&lt;/div&gt;&lt;div&gt;- POST https://gdrive.com/api/upload?uploadType= simple&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+                <mxCell id="9" value="&lt;h1&gt;upload api's&lt;/h1&gt;&lt;div&gt;- POST https://gdrive.com/api/upload?uploadType= resumable&lt;/div&gt;&lt;div&gt;- POST https://gdrive.com/api/upload?uploadType= simple&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="400" y="300" width="360" height="100" as="geometry"/>
                 </mxCell>
-                <mxCell id="10" value="api server" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                <mxCell id="10" value="api server" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
                     <mxGeometry x="470" y="590" width="80" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="44" value="1.c" style="edgeStyle=none;html=1;entryX=1.02;entryY=0.112;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.01;exitY=0.91;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="11" target="43">
+                <mxCell id="44" value="1.c" style="edgeStyle=none;html=1;entryX=1.02;entryY=0.112;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.01;exitY=0.91;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="11" target="43" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="46" style="edgeStyle=none;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="11" target="21">
+                <mxCell id="46" style="edgeStyle=none;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" parent="1" source="11" target="21" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="IjdNnRh6WPfqS0u338YW-62" value="5.a" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="46">
+                <mxCell id="IjdNnRh6WPfqS0u338YW-62" value="5.a" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="46" vertex="1" connectable="0">
                     <mxGeometry x="-0.1934" y="-2" relative="1" as="geometry">
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="52" style="edgeStyle=none;html=1;exitX=0.159;exitY=1.002;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.173;entryY=-0.027;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="11" target="51">
+                <mxCell id="52" style="edgeStyle=none;html=1;exitX=0.159;exitY=1.002;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.173;entryY=-0.027;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="11" target="51" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="490" y="810" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="IjdNnRh6WPfqS0u338YW-64" value="5.b" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="52">
+                <mxCell id="IjdNnRh6WPfqS0u338YW-64" value="5.b" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="52" vertex="1" connectable="0">
                     <mxGeometry x="-0.2092" y="-1" relative="1" as="geometry">
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="11" value="api server" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                <mxCell id="11" value="api server" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
                     <mxGeometry x="480" y="600" width="80" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="14" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="12" target="5">
+                <mxCell id="14" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="12" target="5" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="450" y="580" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="12" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                <mxCell id="12" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
                     <mxGeometry x="260" y="540" width="80" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="17" value="s3 storage" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                <mxCell id="17" value="s3 storage" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
                     <mxGeometry x="670" y="460" width="80" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="34" style="edgeStyle=none;html=1;entryX=0.431;entryY=-0.069;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="18" target="33">
+                <mxCell id="34" style="edgeStyle=none;html=1;entryX=0.431;entryY=-0.069;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="18" target="33" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="910" y="510" as="targetPoint"/>
                         <Array as="points">
@@ -79,42 +79,42 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="IjdNnRh6WPfqS0u338YW-60" value="3" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="34">
+                <mxCell id="IjdNnRh6WPfqS0u338YW-60" value="3" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="34" vertex="1" connectable="0">
                     <mxGeometry x="0.4748" y="1" relative="1" as="geometry">
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="18" value="s3 storage" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                <mxCell id="18" value="s3 storage" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
                     <mxGeometry x="680" y="470" width="80" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="21" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                <mxCell id="21" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
                     <mxGeometry x="660" y="640" width="80" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="22" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                <mxCell id="22" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
                     <mxGeometry x="670" y="650" width="80" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="23" value="Database e.g&amp;nbsp;&lt;br&gt;user info, file metadata etc" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                <mxCell id="23" value="Database e.g&amp;nbsp;&lt;br&gt;user info, file metadata etc" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
                     <mxGeometry x="680" y="660" width="80" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="24" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                <mxCell id="24" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
                     <mxGeometry x="450" y="430" width="80" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="27" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                <mxCell id="27" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
                     <mxGeometry x="460" y="440" width="80" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="29" value="2.a" style="edgeStyle=none;html=1;entryX=-0.016;entryY=0.352;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="28" target="17">
+                <mxCell id="29" value="2.a" style="edgeStyle=none;html=1;entryX=-0.016;entryY=0.352;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="28" target="17" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="28" value="block server&lt;br&gt;- chunking&lt;br&gt;- delta sync&lt;br&gt;- compression and enc" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                <mxCell id="28" value="block server&lt;br&gt;- chunking&lt;br&gt;- delta sync&lt;br&gt;- compression and enc" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
                     <mxGeometry x="470" y="450" width="90" height="90" as="geometry"/>
                 </mxCell>
-                <mxCell id="36" value="4" style="edgeStyle=none;html=1;entryX=0.433;entryY=0.002;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="33" target="35">
+                <mxCell id="36" value="4" style="edgeStyle=none;html=1;entryX=0.433;entryY=0.002;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="33" target="35" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="33" value="req messaging queue" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                <mxCell id="33" value="req messaging queue" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
                     <mxGeometry x="850" y="530" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="37" style="edgeStyle=none;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="35" target="11">
+                <mxCell id="37" style="edgeStyle=none;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="35" target="11" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="520" y="690" as="targetPoint"/>
                         <Array as="points">
@@ -123,51 +123,51 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="39" value="update status to uploaded" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="37">
+                <mxCell id="39" value="update status to uploaded" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="37" vertex="1" connectable="0">
                     <mxGeometry x="0.0158" y="-1" relative="1" as="geometry">
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="IjdNnRh6WPfqS0u338YW-61" value="5" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="37">
+                <mxCell id="IjdNnRh6WPfqS0u338YW-61" value="5" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="37" vertex="1" connectable="0">
                     <mxGeometry x="-0.3" y="1" relative="1" as="geometry">
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="35" value="event handler" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="35" value="event handler" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="860" y="680" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="38" value="upload compete event" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                <mxCell id="38" value="upload compete event" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="790" y="490" width="60" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="41" value="" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+                <mxCell id="41" value="" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
                     <mxGeometry x="325" y="680" width="60" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="42" value="" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+                <mxCell id="42" value="" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
                     <mxGeometry x="330" y="690" width="60" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="IjdNnRh6WPfqS0u338YW-78" style="edgeStyle=none;html=1;" edge="1" parent="1" source="43">
+                <mxCell id="IjdNnRh6WPfqS0u338YW-78" style="edgeStyle=none;html=1;" parent="1" source="43" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="650" y="710" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="IjdNnRh6WPfqS0u338YW-79" value="2.b" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="IjdNnRh6WPfqS0u338YW-78">
+                <mxCell id="IjdNnRh6WPfqS0u338YW-79" value="2.b" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="IjdNnRh6WPfqS0u338YW-78" vertex="1" connectable="0">
                     <mxGeometry x="0.0703" y="-2" relative="1" as="geometry">
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="43" value="metadat cache" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+                <mxCell id="43" value="metadat cache" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
                     <mxGeometry x="340" y="700" width="60" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="48" value="1.b update status pending" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                <mxCell id="48" value="1.b update status pending" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="360" y="580" width="60" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="49" value="1.a upload file" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                <mxCell id="49" value="1.a upload file" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="350" y="510" width="60" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="50" value="event handler" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="50" value="event handler" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="870" y="690" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="53" style="edgeStyle=none;html=1;" edge="1" parent="1" source="51">
+                <mxCell id="53" style="edgeStyle=none;html=1;" parent="1" source="51" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="120" y="720" as="targetPoint"/>
                         <Array as="points">
@@ -176,20 +176,20 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="IjdNnRh6WPfqS0u338YW-56" value="long polling" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="53">
+                <mxCell id="IjdNnRh6WPfqS0u338YW-56" value="long polling" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="53" vertex="1" connectable="0">
                     <mxGeometry x="-0.5767" y="1" relative="1" as="geometry">
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="IjdNnRh6WPfqS0u338YW-71" value="6.a" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="53">
+                <mxCell id="IjdNnRh6WPfqS0u338YW-71" value="6.a" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="53" vertex="1" connectable="0">
                     <mxGeometry x="-0.2133" y="2" relative="1" as="geometry">
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="55" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="51" target="54">
+                <mxCell id="55" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="51" target="54" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="IjdNnRh6WPfqS0u338YW-68" style="edgeStyle=none;html=1;" edge="1" parent="1" source="51">
+                <mxCell id="IjdNnRh6WPfqS0u338YW-68" style="edgeStyle=none;html=1;" parent="1" source="51" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="180" y="620" as="targetPoint"/>
                         <Array as="points">
@@ -197,45 +197,45 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="IjdNnRh6WPfqS0u338YW-70" value="upload successful" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="IjdNnRh6WPfqS0u338YW-68">
+                <mxCell id="IjdNnRh6WPfqS0u338YW-70" value="upload successful" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="IjdNnRh6WPfqS0u338YW-68" vertex="1" connectable="0">
                     <mxGeometry x="0.2158" relative="1" as="geometry">
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="IjdNnRh6WPfqS0u338YW-72" value="6.b" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="IjdNnRh6WPfqS0u338YW-68">
+                <mxCell id="IjdNnRh6WPfqS0u338YW-72" value="6.b" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="IjdNnRh6WPfqS0u338YW-68" vertex="1" connectable="0">
                     <mxGeometry x="-0.0962" relative="1" as="geometry">
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="51" value="synch/notification service" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="51" value="synch/notification service" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="440" y="820" width="150" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="56" style="edgeStyle=none;html=1;entryX=0.995;entryY=0.645;entryDx=0;entryDy=0;entryPerimeter=0;exitX=-0.002;exitY=0.634;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="54" target="51">
+                <mxCell id="56" style="edgeStyle=none;html=1;entryX=0.995;entryY=0.645;entryDx=0;entryDy=0;entryPerimeter=0;exitX=-0.002;exitY=0.634;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="54" target="51" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="54" value="offline backup queue" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                <mxCell id="54" value="offline backup queue" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
                     <mxGeometry x="660" y="820" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="IjdNnRh6WPfqS0u338YW-58" value="Load balancer" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                <mxCell id="IjdNnRh6WPfqS0u338YW-58" value="Load balancer" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
                     <mxGeometry x="270" y="550" width="80" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="IjdNnRh6WPfqS0u338YW-76" style="edgeStyle=none;html=1;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="IjdNnRh6WPfqS0u338YW-73" target="IjdNnRh6WPfqS0u338YW-75">
+                <mxCell id="IjdNnRh6WPfqS0u338YW-76" style="edgeStyle=none;html=1;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" parent="1" source="IjdNnRh6WPfqS0u338YW-73" target="IjdNnRh6WPfqS0u338YW-75" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="10" y="600" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="IjdNnRh6WPfqS0u338YW-73" value="client 1 web" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="IjdNnRh6WPfqS0u338YW-73" value="client 1 web" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="60" y="550" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="IjdNnRh6WPfqS0u338YW-77" style="edgeStyle=none;html=1;" edge="1" parent="1" source="IjdNnRh6WPfqS0u338YW-74">
+                <mxCell id="IjdNnRh6WPfqS0u338YW-77" style="edgeStyle=none;html=1;" parent="1" source="IjdNnRh6WPfqS0u338YW-74" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="-10" y="660" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="IjdNnRh6WPfqS0u338YW-74" value="client 2 app&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="IjdNnRh6WPfqS0u338YW-74" value="client 2 app&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="50" y="650" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="IjdNnRh6WPfqS0u338YW-75" value="Client App&lt;br&gt;&lt;br&gt;- splits file in to chunks for faster , resumable uploads&lt;br&gt;- also constructs the file back from chunks received from cloud storage&lt;br&gt;- local copy of metadata DB w.r.t that user&lt;br&gt;-watcher to monitor state of files/folder in workspace and notify indexer&lt;br&gt;- indexer will update the internal metadata db with info on updated chunks, and will do delta sync with block servers to upload only those block to s3 and update remote metadata db &amp;amp; broadcast this change to others" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                <mxCell id="IjdNnRh6WPfqS0u338YW-75" value="Client App&lt;br&gt;&lt;br&gt;- splits file in to chunks for faster , resumable uploads&lt;br&gt;- also constructs the file back from chunks received from cloud storage&lt;br&gt;- local copy of metadata DB w.r.t that user&lt;br&gt;-watcher to monitor state of files/folder in workspace and notify indexer&lt;br&gt;- indexer will update the internal metadata db with info on updated chunks, and will do delta sync with block servers to upload only those block to s3 and update remote metadata db &amp;amp; broadcast this change to others" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
                     <mxGeometry x="-260" y="550" width="240" height="240" as="geometry"/>
                 </mxCell>
             </root>

@@ -1,0 +1,158 @@
+<mxfile host="65bd71144e">
+    <diagram id="E1B0c63AFB5XFSUCJhjO" name="Page-1">
+        <mxGraphModel dx="1576" dy="1676" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="Api server" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="260" y="170" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="4" target="34" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="RDMS&lt;br&gt;primary" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
+                    <mxGeometry x="490" y="300" width="60" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" style="edgeStyle=none;html=1;exitX=0.145;exitY=0;exitDx=0;exitDy=4.35;exitPerimeter=0;" parent="1" source="6" target="26" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="540" y="50" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="6" value="cassndra&lt;br&gt;DB" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
+                    <mxGeometry x="740" y="20" width="60" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" style="edgeStyle=none;html=1;entryX=0;entryY=0;entryDx=0;entryDy=52.5;entryPerimeter=0;" parent="1" source="7" edge="1" target="4">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="480" y="350" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7" value="redis cache" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
+                    <mxGeometry x="340" y="310" width="60" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="" style="endArrow=classic;html=1;exitX=1.025;exitY=0.615;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="2" target="7" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="350" y="220" as="sourcePoint"/>
+                        <mxPoint x="530" y="370" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="11" value="Api server" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="270" y="180" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="12" target="17" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" style="edgeStyle=none;html=1;entryX=0.923;entryY=-0.004;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="12" target="52" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="236.11873844983666" y="318.54133163628285" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="12" value="Api server" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="190" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="13" target="2" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="LB" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="70" y="160" width="110" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" style="edgeStyle=none;html=1;entryX=0.004;entryY=0.633;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="14" target="13" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="enroll course" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="15">
+                    <mxGeometry x="-0.3333" y="3" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="14" value="students" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="-90" y="240" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="17" target="20" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="RabbitMQ" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
+                    <mxGeometry x="460" y="170" width="170" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="consumers" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="680" y="150" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="consumers" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="690" y="160" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" style="edgeStyle=none;html=1;" parent="1" source="21" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="760" y="100" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="21" value="consumers" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="700" y="170" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="default hot storage&lt;br&gt;mode" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="720" y="-100" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="archival storage" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="340" y="-100" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="28" target="6" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="730" y="60" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="30" style="edgeStyle=none;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="28" edge="1" target="27">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="280" y="50" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="57" style="edgeStyle=none;html=1;" edge="1" parent="1" source="28" target="56">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="cron jobs" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="510" y="10" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="LB&lt;br&gt;authenication&lt;br&gt;rate limiting&amp;nbsp;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="170" width="110" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" style="edgeStyle=none;html=1;" edge="1" parent="1" source="32" target="50">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="redis cache" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
+                    <mxGeometry x="350" y="320" width="60" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="backup&lt;br&gt;secondary" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
+                    <mxGeometry x="590" y="320" width="60" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" style="edgeStyle=none;html=1;entryX=-0.025;entryY=0.385;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="45" target="13">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="add course" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="46">
+                    <mxGeometry x="-0.3473" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="45" value="admin" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+                    <mxGeometry x="-90" y="120" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" style="edgeStyle=none;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="49" target="2">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="&lt;h1&gt;course onboarding&lt;/h1&gt;&lt;p&gt;&lt;span style=&quot;text-align: center;&quot;&gt;while adding courses we can check if toposort is feasible i.e it is DAG or not&lt;/span&gt;&lt;br style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;to prevent cyclic dependencies between courses and their pre requisites&lt;/span&gt;&lt;br style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;text-align: center;&quot;&gt;toposort has TC of&amp;nbsp; O(VlogE) here V is coureses and pre requisite and E is an edge to each prerequisite from course&lt;/span&gt;&lt;br style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;and a course usually will have 4-5 pre requisite at max and not 100's or 1000's so it will be almost constant O(1) TC operation&lt;/span&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="-80" y="-130" width="260" height="220" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" value="&lt;h1&gt;cache&lt;/h1&gt;&lt;p&gt;it will be read heavy system since read to write ratio is 100:1 and write QPS is high i.e 1 req/sec so but read QPS is 10 req/sec and write through is good for reducing read latency at the cost of slow writes to DB&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="390" y="440" width="190" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" value="&lt;h1&gt;course enrollement&lt;/h1&gt;&lt;p style=&quot;text-align: center;&quot;&gt;query the DB to check if all pre requisite course are completed by a user&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;if not then enrollement is disabled for user for this course&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;if yes then enrollment is enabled and user can proceed with enrollment&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;since read/W&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="-20" y="360" width="260" height="220" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" value="&lt;h1&gt;DB&lt;/h1&gt;&lt;div&gt;as per the assumptions and estimation storage requiement for 10yrs is 36.5 GB only and read/write QPS is of medium scale so 1 DB instance would be suffice but for reliabiltiy purpose we can have standby snapshot backup replica so as to avoid SOP failures further in future if&amp;nbsp; load conditions gets huge then we can use master slave read write replica architure or sharding to handle load&amp;nbsp;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="635" y="420" width="190" height="240" as="geometry"/>
+                </mxCell>
+                <mxCell id="55" value="&lt;h1&gt;like/comments&lt;/h1&gt;&lt;p&gt;since 1M likes, comments are added per day for course i.s scale is big i.e 10 req/s and since it is ever increasing data with only finite set of queries so storing this info in cassandra makes sense also to have low latency for such reqs we can do async processing putting these likes/comments update on a course in messaging queue to get processed by consumers nodes and parsed in required format and put in cassandra&lt;/p&gt;&lt;p&gt;in cassandra we can perform some aggregate operations like count of comments and like for a course and other analytics like which course is popular&lt;/p&gt;&lt;p&gt;also we can add likes and comments cound directly in the course table which adding likes and comments since these counts are always needed on a course details page and checking out who all user liked and comments details is separate action and can be fetched from DB and some latency is acceptable there since a course can have thosands of like and comments so it is ok fetch the details with paginated api calls with limit&amp;nbsp;&amp;nbsp;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="900" y="180" width="240" height="450" as="geometry"/>
+                </mxCell>
+                <mxCell id="56" value="&lt;h1&gt;storage cost&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;/h1&gt;&lt;div&gt;storing an ever increasing data like likes and comments in cassandra is an expense and we can reduce this expense to some extent by pushing older data&amp;nbsp;&lt;/div&gt;let's say 1 year old likes and comments data which is rarely used&amp;nbsp;&lt;div&gt;&amp;nbsp;or obsolete data i.e like. comments related to some deleted coursed we can transfer that data to archival storage which is much cheaper in comparison to hot storage tier&lt;/div&gt;&lt;div&gt;we can use some cron jobs to move data from hot to archival storage&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="510" y="-390" width="240" height="240" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
